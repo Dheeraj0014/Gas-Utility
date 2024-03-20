@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gas Utilities.</title>
+</head>
+<body>
+
+  <h1>Submit Service Request</h1>
+  <form method="post" enctype="multipart/form-data">  {% csrf_token %}
+    {{ form.as_p }}
+    <label for="files">Attach Files (optional):</label>
+    <input type="file" name="files" multiple>
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

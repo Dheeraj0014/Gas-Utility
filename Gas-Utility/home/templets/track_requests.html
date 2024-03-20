@@ -1,0 +1,23 @@
+<h1>Track Your Service Requests</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Submitted At</th>
+      <th>Resolved At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for request in requests %}
+    <tr>
+      <td>{{ request.type }}</td>
+      <td>{{ request.description }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.submitted_at }}</td>
+      <td>{{ request.resolved_at|default:'-' }}</td>  # Display '-' if not resolved
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
